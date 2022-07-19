@@ -2,6 +2,8 @@ import type { AppProps } from "next/app";
 import { ThemeProvider, DefaultTheme } from "styled-components";
 import GlobalStyle from "../components/globalstyles";
 
+import { wrapper } from "../features/store";
+
 const theme: DefaultTheme = {
     colors: {
         primary: "#111",
@@ -9,7 +11,7 @@ const theme: DefaultTheme = {
     },
 };
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <ThemeProvider theme={theme}>
@@ -19,3 +21,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </>
     );
 }
+
+export default wrapper.withRedux(App);
