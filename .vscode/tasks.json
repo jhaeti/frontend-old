@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "restart frontend",
+			"type": "shell",
+			"command": "docker compose -f docker-compose.dev.yml restart frontend",
+			"presentation": {
+				"reveal": "never"
+			}
+		}
+	]
+}
