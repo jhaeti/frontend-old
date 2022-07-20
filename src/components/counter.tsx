@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../features/store/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/store/hooks";
 import {
     increment,
     decrement,
     incrementByAmount,
-} from "../features/counter/counterSlice";
+} from "../redux/counter/counterSlice";
 
 const Counter = () => {
     const count = useAppSelector((state) => state.counter.value);
