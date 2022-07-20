@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider, DefaultTheme } from "styled-components";
 import GlobalStyle from "../components/globalstyles";
 
-import { wrapper } from "../features/store";
+import { wrapper } from "../redux/store";
 
 const theme: DefaultTheme = {
     colors: {
