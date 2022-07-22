@@ -1,5 +1,11 @@
-import { createWrapper, HYDRATE } from "next-redux-wrapper";
 import { configureStore, combineReducers, AnyAction } from "@reduxjs/toolkit";
+import { createWrapper, HYDRATE } from "next-redux-wrapper";
+import {
+    wrapMakeStore,
+    nextReduxCookieMiddleware,
+} from "next-redux-cookie-wrapper";
+
+// Reducer from slice
 import counterReducer from "../counter/counterSlice";
 import productReducer from "../products/slice";
 
@@ -22,12 +28,20 @@ const reducer = (
     return combineReducer(state, action);
 };
 
-export const makeStore = () =>
+export const makeStore = wrapMakeStore(() =>
     configureStore({
         reducer,
-    });
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware().prepend(
+                nextReduxCookieMiddleware({
+                    // Part of state to store in cookies
+                    subtrees: ["counter.value"],
+                })
+            ),
+    })
+);
 
-export const wrapper = createWrapper(makeStore);
+export const wrapper = createWrapper<Store>(makeStore);
 
 type Store = ReturnType<typeof makeStore>;
 
