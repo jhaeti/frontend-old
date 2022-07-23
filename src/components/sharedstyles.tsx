@@ -51,4 +51,8 @@ const CodeTag = styled.code`
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 `;
 
-export { Container, Main, Title, Description, CodeTag };
+const StyledPre = styled.pre`
+    height: 50vh;
+`;
+
+export { Container, Main, Title, Description, CodeTag, StyledPre };
