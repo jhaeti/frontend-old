@@ -1,7 +1,8 @@
 import type { AppProps } from "next/app";
 import { ThemeProvider, DefaultTheme } from "styled-components";
-import GlobalStyle from "../components/globalstyles";
+import { SWRDevTools } from "swr-devtools";
 
+import GlobalStyle from "../components/globalstyles";
 import { wrapper } from "../redux/store";
 
 const theme: DefaultTheme = {
@@ -14,10 +15,12 @@ const theme: DefaultTheme = {
 function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <ThemeProvider theme={theme}>
-                <GlobalStyle />
-                <Component {...pageProps} />
-            </ThemeProvider>
+            <SWRDevTools>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyle />
+                    <Component {...pageProps} />
+                </ThemeProvider>
+            </SWRDevTools>
         </>
     );
 }
