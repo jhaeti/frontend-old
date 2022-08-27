@@ -6,7 +6,7 @@ import {
     Description,
 } from "../components/sharedstyles";
 
-export default function About() {
+function About() {
     return (
         <Container>
             <Main>
@@ -20,3 +20,5 @@ export default function About() {
         </Container>
     );
 }
+
+export default About;

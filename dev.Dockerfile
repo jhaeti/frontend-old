@@ -6,6 +6,8 @@ WORKDIR /app
 COPY package.json yarn.lock* ./
 RUN yarn install
 
+ENV CHOKIDAR_USEPOLLING=true
+
 COPY src ./src
 COPY public ./public
 COPY next.config.js .

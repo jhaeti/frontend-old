@@ -50,5 +50,25 @@ const CodeTag = styled.code`
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 `;
+const FlexContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    max-width: 800px;
+    margin-top: 3rem;
+`;
 
-export { Container, Main, Title, Description, CodeTag };
+const StyledPre = styled.pre`
+    height: 50vh;
+`;
+
+export {
+    Container,
+    Main,
+    Title,
+    Description,
+    CodeTag,
+    StyledPre,
+    FlexContainer,
+};
