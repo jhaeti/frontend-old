@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "MIT",
     "volta": {
-        "node": "17.9.1"
+        "node": "18.9.0"
     },
     "scripts": {
         "build": "next build",
