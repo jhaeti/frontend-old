@@ -45,5 +45,5 @@ export const wrapper = createWrapper<Store>(makeStore);
 
 type Store = ReturnType<typeof makeStore>;
 
-export type RootState = Store["getState"];
+export type RootState = ReturnType<typeof combineReducer>;
 export type AppDispatch = Store["dispatch"];
