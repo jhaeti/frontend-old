@@ -1,4 +1,6 @@
 import { Formik, Field, useField, Form, ErrorMessage } from "formik";
+import styled from "styled-components"
+import Button from "@mui/material/Button"
 import { useRouter } from "next/router";
 import * as Yup from "yup";
 import MyCheckbox from "./MyCheckbox";
@@ -75,13 +77,22 @@ const FormTest = () => {
                         I accept the terms and conditions
                     </MyCheckbox>
 
-                    <button type="submit" disabled={isSubmitting}>
+                    <StyledButton
+                        variant="contained"
+                        type="submit"
+                        disabled={isSubmitting}
+                    >
                         Submit
-                    </button>
+                    </StyledButton>
                 </Form>
             )}
         </Formik>
     );
 };
+
+const StyledButton = styled(Button)`
+    border: 2px solid cyan;
+
+`
 
 export default FormTest;
