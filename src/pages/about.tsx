@@ -1,4 +1,6 @@
 import Link from "next/link";
+import MyButton from "../components/mui/Button";
+import MyTypography from "../components/mui/Typography";
 import {
     Container,
     Main,
@@ -15,6 +17,8 @@ function About() {
                     <Link href="/">
                         <a>&larr; Go Back to where ever you came from</a>
                     </Link>
+                    {/* <MyTypography /> */}
+                    <MyButton />
                 </Description>
             </Main>
         </Container>
